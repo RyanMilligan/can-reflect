@@ -350,6 +350,9 @@ shapeReflections = {
 	 * @return {Array}  an array of the values of `obj`
 	 */
 	toArray: function(obj){
+		if (!typeReflections.isListLike(obj)) {
+			return obj;
+		}
 		var arr = [];
 		this.each(obj, function(value){
 			arr.push(value);
